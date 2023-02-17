@@ -1,20 +1,20 @@
-#Using python to manipulate sets
+# Using Python to manipulate sets
+
+
+#################################################################################################################
 
 '''
-Python knows a number of compound data types, 
-used to group together other values.
-They are:
-tuple
-dictionary
-set
-list
+Python knows a number of compound data types used to group together other values.
+They are: tuple, dictionary, set, list
 
-A Set is an unordered collection with no duplicate elements. Like a dictionary,
-a set is defined by a curly bracket.
+A 'set' is an unordered collection with no duplicate elements.
 
-Sets are mutable - this means that items can be changed.
+Like a dictionary, a set is defined by a curly brackets.
 
-Set has a whole bunch of methods available.
+Sets are MUTABLE - this means that items CAN be changed.
+
+Set has a whole bunch of built-in methods available:
+
 add() Adds an element to the set
 clear() Removes all the elements from the set
 copy() Returns a copy of the set
@@ -32,29 +32,56 @@ symmetric_difference() Returns a set with the symmetric differences of two sets
 symmetric_difference_update() Inserts the symmetric differences from this set and another
 union() Return a set containing the union of sets
 update() Update the set with another set, or any other iterable
+
 '''
 
-#The basics
-basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
-print(basket)# show that duplicates have been removed ===> prints {'apple', 'orange', 'pear', 'banana'}
+#################################################################################################################
 
-'orange' in basket # fast membership testing ===> prints 'True'
+
+# Create a set by defining a variable as values inside curly brackets separated by commas
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+
+basket # duplicates are not allowed in sets, so they will have been removed ===> prints {'apple', 'orange', 'pear', 'banana'}
+
+#################################################################################################################
+
+
+# Fast membership testing
+
+'orange' in basket # ===> prints 'True'
 'crabgrass' in basket # ===> prints 'False'
 
-# Demonstrate set operations on unique letters from two words
+#################################################################################################################
+
+
+# Using set() operations on unique letters from two words
+
 a = set('abracadabra')
 b = set('alacazam')
-a # unique letters in a ===> prints {'a', 'r', 'd', 'c', 'b'}
-a - b # letters in a but not in b ===> prints {'r', 'b', 'd'} 
-a | b # letters in a or b or both ===> prints {'a', 'z', 'r', 'd', 'c', 'm', 'b', 'l'}
-a & b # letters in both a and b ===> prints {'a', 'c'}
-a ^ b # letters in a or b but not both ===> prints {'d', 'b', 'z', 'r', 'm', 'l'}
+
+a       # unique letters in a ===> prints {'a', 'r', 'd', 'c', 'b'}
+a - b   # letters in a but not in b ===> prints {'r', 'b', 'd'} 
+a | b   # letters in a or b or both ===> prints {'a', 'z', 'r', 'd', 'c', 'm', 'b', 'l'}
+a & b   # letters in both a and b ===> prints {'a', 'c'}
+a ^ b   # letters in a or b but not both ===> prints {'d', 'b', 'z', 'r', 'm', 'l'}
+
+# IMPORTANT - the above sets will not always print in the same order !!!
+
+#################################################################################################################
 
 
-#Set comprehension
+# Set comprehension
+
+# creates a set out of any characters the satisfy the conditional of the for loop 
 a = {x for x in 'abracadabra' if x not in 'abc'}
 a # ===> prints {'r', 'd'}
 
-#built-in function set()
-x = set(('bobby','bobby', 'at', 'didcoding','dot', 'com')) # creates a set object
+#################################################################################################################
+
+
+# Built-in set() function
+
+x = set(('bobby','bobby', 'at', 'didcoding', 'dot', 'com')) # creates a set out of a tuple (or any other elements you pass in) 
 x # ===> prints {'at', 'bobby', 'didcoding', 'dot', 'com'}
+
+#################################################################################################################

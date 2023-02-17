@@ -1,5 +1,8 @@
 # Using python to manipulate strings
 
+#################################################################################################################
+
+
 '''
 Python can be used to manipulate strings, which can 
 be expressed in several ways.
@@ -62,6 +65,9 @@ upper() Converts a string into upper case
 zfill() Fills the string with a specified number of 0 values at the beginning
 '''
 
+#################################################################################################################
+
+
 # The basics
 'spam eggs'  # single quotes
 'doesn\'t'  # use \' to escape the single quote...
@@ -73,7 +79,6 @@ zfill() Fills the string with a specified number of 0 values at the beginning
 # New line
 s = 'First line.\nSecond line.'  # \n means newline
 s  # without print(), \n is included in the output
-
 print(s)  # with print(), \n produces a new line
 
 # Raw string
@@ -88,6 +93,8 @@ Usage: thingy [OPTIONS]
      -H hostname               Hostname to connect to
 """)
 
+#################################################################################################################
+
 
 # Concatenated
 3 * 'un' + 'ium' # ===> prints 'unununium'
@@ -101,6 +108,9 @@ text
 prefix = 'Did'
 prefix ='Coding'
 prefix + 'Coding'
+
+#################################################################################################################
+
 
 # Indexing
 '''
@@ -122,18 +132,28 @@ word[-2:]  # characters from the second-last (included) to the end      ===> pri
 word[:2] + word[5:]                                                  #  ===> prints 'Diding'
 word[:4] + word[5:]                                                  #  ===> prints 'Dicding'
 
+#################################################################################################################
+
 
 # Changing strings
+
 word[0] = 'P' # strings are IMMUTABLE ===> prints TypeError: 'str' object does not support item assignment
 'P' + word[1:] # you can use a string(s) to create a new string ===> prints 'Pidcoding'
 word[:2] + 'di' # ===> prints 'Didi'
 
+#################################################################################################################
+
+
 # String length
+
 s = 'bobby-didcoding'
 len(s) # ===> prints 15, which is the number of characters in s
 
+#################################################################################################################
+
 
 # Handy built-in functions
+
 '''
 When you don’t need fancy output but just want a quick display 
 of some variables for debugging purposes, you can convert any 
@@ -148,6 +168,7 @@ The format() method formats the specified value(s) and insert them
 inside the string's placeholder '{}'.
 
 '''
+
 x=20
 y=400
 repr((x, y, ('spam', 'eggs')))    # ===> prints "(20, 400, ('spam', 'eggs'))" (human-read-able)
