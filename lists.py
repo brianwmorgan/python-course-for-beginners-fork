@@ -71,10 +71,10 @@ len(letters)
 #Nesting
 a = ['a', 'b', 'c']
 n = [1, 2, 3]
-x = [a, n]
-x
-x[0]
-x[0][1]
+x = [a, n] 
+x # ===> [['a', 'b', 'c'], [1, 2, 3]]
+x[0] # ===> ['a', 'b', 'c']
+x[0][1] # ===> 'b'
 
 
 #List comprehension

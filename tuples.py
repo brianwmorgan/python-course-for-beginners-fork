@@ -23,19 +23,20 @@ index() Returns the index of the first element with the specified value
 
 #The basics - tuple packing
 t = 12345, 54321, 'hello!'
-t[0]
-t
+t[0] # ===> prints 12345
+t # ===> prints (12345, 54321, 'hello!')
 
 # Tuples may be nested:
 u = t, (1, 2, 3, 4, 5)
-u
+u # ===> prints ((12345, 54321, 'hello!'), (1, 2, 3, 4, 5))
 
 # Tuples are immutable:
-t[0] = 88888
+t[0] = 88888 # ===> prints 'TypeError: 'tuple' object does not support item assignment'
 
 # but they can contain mutable objects:
 v = ([1, 2, 3], [3, 2, 1])
-v
+v[0][1] = 36
+v # ===> prints ([1, 36, 3], [3, 2, 1])
 
 #Indexing
 '''
@@ -46,25 +47,27 @@ v
 -9  -8  -7  -6  -5  -4  -3  -2  -1
 '''
 
-t[0]  # indexing returns the item
-t[-1]
+t = 12345, 54321, 'hello!'
+t[0]  # indexing returns the item ===> prints '12345'
+t[-1] # ===> prints 'hello!'
 
-#trailing comma
+#trailing comma creates a tuple with a length of one
 empty = ()
 singleton = 'hello',
-len(empty)
-len(singleton)
-singleton
+len(empty) # ===> prints 0
+len(singleton) # ===> prints 1
+singleton # ===> prints ('hello",)
 
-#Unpacking a tuple
+#Unpacking a tuple (takes each item from a tuple and assigns it to a new variable)
 x, y, z = t
-x
-y
-z
+x # ===> prints 12345
+y # ===> prints 54321
+z # ===> prints 'hello!'
 
 #built-in function tuple()
-x = tuple(['bobby', 'at', 'didcoding','dot', 'com']) # creates a tuple object
-x
+x = tuple(['bobby', 'at', 'didcoding','dot', 'com']) # creates a tuple object out the input (in this case, a list)
+x # ===> prints ('bobby', 'at', 'didcoding', 'dot', 'com'), which is now immutable
+x[1] = 'barf' # ===> prints 'TypeError'
 
 #Tuple comprehension...Just use list comprehension with the tuple function
-tuple([x**2 for x in range(10)])
+tuple([x**2 for x in range(10)]) # ===> prints (0, 1, 4, 9, 16, 25, 36, 49, 64, 81)

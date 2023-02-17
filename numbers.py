@@ -1,4 +1,4 @@
-#Using python as a calculator
+# Using python as a calculator
 
 '''
 We can use the interpreter to take an input and return an output!
@@ -37,10 +37,10 @@ lastly, Python has a handy way of making big int's easier to read
 7 * 10 # simple multiplication
 
 #Division and Modulus
-10 / 4  # classic division returns a float
-10 // 4  # floor division discards the fractional part
-10 % 4 # the % operator returns the remainder of the division
-divmod(10,4)
+10 / 4  # classic division returns a float                       # ===> prints 2.5
+10 // 4  # floor division discards the fractional part           # ===> prints 2
+10 % 3 # the % operator returns the remainder of the division    # ===> prints 1 
+divmod(10,3)                                                     # ===> prints (3, 1)
 
 #Fancy sums
 50 - 5*6 
@@ -48,19 +48,19 @@ divmod(10,4)
 5 * 3 + 2  # floored quotient * divisor + remainder
 
 #Exponentiation (power of)
-5 ** 2  # 5 squared
-2 ** 7  # 2 to the power of 7
-pow(2,7)
+5 ** 2  # 5 squared                # ===> prints 25
+2 ** 7  # 2 to the power of 7      # ===> prints 128
+pow(2,7)                           # ===> prints 128
 
 #Using variables
 width = 60
 height = 3 * 7
-width * height
+width * height  # ===> prints 1260
 
 
 #In interactive mode, the last printed expression is assigned to the variable _.
 tax = 12.5 / 100
 price = 100.50
-price * tax #this is assigned to '_' and we use it in the next expression
-price + _ #We reference '_' but this expression is now assigned to '_'
-round(_, 2)
+price * tax # this is assigned to '_' and we use it in the next expression ===> on it's own, this would print 12.5625
+price + _ #We reference '_' but this expression is now assigned to '_' ===> this is the equivalent of 100.5 + 12.5625, which is 113.0625
+round(_, 2) # this will round the last printed expression to two decimals ===> prints 113.06

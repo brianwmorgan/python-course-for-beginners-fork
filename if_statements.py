@@ -1,4 +1,4 @@
-#Python control flows - If statement
+# Python control flows - If statement
 
 '''
 Python uses the usual flow control statements known 
@@ -20,7 +20,7 @@ both elif and else are optional!
 Note: I will be defining a function to demo :)
 '''
 
-#The basics
+# The basics
 def number_play(x):
     if x < 0:
         x = 0
@@ -32,7 +32,7 @@ def number_play(x):
     else:
         print('More')
 
-number_play(-1)
-number_play(0)
-number_play(1)
-number_play(2)
+number_play(-1)      # ===> prints 'Negative changes to zero'
+number_play(0)       # ===> prints 'Zero'
+number_play(1)       # ===> prints 'Single'
+number_play(2)       # ===> prints 'More'

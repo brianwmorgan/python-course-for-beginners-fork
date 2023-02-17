@@ -1,4 +1,4 @@
-#Using python to manipulate strings
+# Using python to manipulate strings
 
 '''
 Python can be used to manipulate strings, which can 
@@ -62,7 +62,7 @@ upper() Converts a string into upper case
 zfill() Fills the string with a specified number of 0 values at the beginning
 '''
 
-#The basics
+# The basics
 'spam eggs'  # single quotes
 'doesn\'t'  # use \' to escape the single quote...
 "doesn't"  # ...or use double quotes instead
@@ -70,18 +70,18 @@ zfill() Fills the string with a specified number of 0 values at the beginning
 "\"Yes,\" they said."
 
 
-#New line
+# New line
 s = 'First line.\nSecond line.'  # \n means newline
 s  # without print(), \n is included in the output
 
 print(s)  # with print(), \n produces a new line
 
-#Raw string
+# Raw string
 print('C:\some\name')  # here \n means newline!
 print(r'C:\some\name')  # note the r before the quote
 
 
-#String literals
+# String literals
 print("""\
 Usage: thingy [OPTIONS]
      -h                        Display this usage message
@@ -89,19 +89,20 @@ Usage: thingy [OPTIONS]
 """)
 
 
-#Concatenated
-3 * 'un' + 'ium'
-'Did' 'Coding'
+# Concatenated
+3 * 'un' + 'ium' # ===> prints 'unununium'
+'Did' 'Coding' #===> prints 'DidCoding'
+
 text = ('Put several strings within parentheses '
         'to have them joined together.')
 text
-#This only works with two literals though, 
-#not with variables or expressions:
+
+# This only works with two literals though, not with variables or expressions:
 prefix = 'Did'
-prefix 'Coding'
+prefix ='Coding'
 prefix + 'Coding'
 
-#Indexing
+# Indexing
 '''
  +---+---+---+---+---+---+---+---+---+
  | D | i | d | C | o | d | i | n | g |
@@ -111,28 +112,28 @@ prefix + 'Coding'
 '''
 
 word = 'Didcoding'
-word[0]  # character in position 0
-word[5]  # character in position 5
-word[0:2]  # characters from position 0 (included) to 2 (excluded)
-word[2:5]  # characters from position 2 (included) to 5 (excluded)
-word[:2]   # character from the beginning to position 2 (excluded)
-word[4:]   # characters from position 4 (included) to the end
-word[-2:]  # characters from the second-last (included) to the end
-word[:2] + word[2:]
-word[:4] + word[4:]
+word[0]  # character in position 0                                      ===> prints 'D'
+word[4]  # character in position 5                                      ===> prints '0'
+word[0:2]  # characters from position 0 (included) to 2 (excluded)      ===> prints 'Di'
+word[2:5]  # characters from position 2 (included) to 5 (excluded)      ===> prints 'dco'
+word[:5]   # character from the beginning to position 2 (excluded)      ===> prints 'Didco'
+word[4:]   # characters from position 4 (included) to the end           ===> prints 'oding'
+word[-2:]  # characters from the second-last (included) to the end      ===> prints 'n'
+word[:2] + word[5:]                                                  #  ===> prints 'Diding'
+word[:4] + word[5:]                                                  #  ===> prints 'Dicding'
 
 
-#changing strings
-word[0] = 'P'
-'P' + word[1:]
-word[:2] + 'di'
+# Changing strings
+word[0] = 'P' # strings are IMMUTABLE ===> prints TypeError: 'str' object does not support item assignment
+'P' + word[1:] # you can use a string(s) to create a new string ===> prints 'Pidcoding'
+word[:2] + 'di' # ===> prints 'Didi'
 
-#Sting length
+# String length
 s = 'bobby-didcoding'
-len(s)
+len(s) # ===> prints 15, which is the number of characters in s
 
 
-#Handy built-in functions
+# Handy built-in functions
 '''
 When you don’t need fancy output but just want a quick display 
 of some variables for debugging purposes, you can convert any 
@@ -149,9 +150,9 @@ inside the string's placeholder '{}'.
 '''
 x=20
 y=400
-repr((x, y, ('spam', 'eggs')))
-str((x, y, ('spam', 'eggs')))
+repr((x, y, ('spam', 'eggs')))    # ===> prints "(20, 400, ('spam', 'eggs'))" (human-read-able)
+str((x, y, ('spam', 'eggs')))     # ===> prints "(20, 400, ('spam', 'eggs'))" (shown as the same as above, but can be read by the interpreter)
 
 
-print('{0} and {1}'.format('spam', 'eggs'))
-print('{1} and {0}'.format('spam', 'eggs'))
+print('{0} and {1}'.format('spam', 'eggs'))   # ===> prints spam and eggs
+print('{1} and {0}'.format('spam', 'eggs'))   # ===> prints eggs and spam

@@ -42,32 +42,33 @@ some_dict = {
     'a_key_3': ['a_list', 'as', 'a value'],
     'a_key_4': {'a_dict': 'as a value'}
 }
-some_dict
+some_dict # ===> prints {'a_key': 'a_value', 'a_key_2': 'a_value_2', 'a_key_3': ['a_list', 'as', 'a value'], 'a_key_4': {'a_dict': 'as a value'}}
 
 
-some_dict[0]  # this will return an error as you need to ref the key by name
-some_dict['a_key']
-some_dict['a_key_4']
+some_dict[0]  # this will return an error as you need to reference the key by name ===> prints 'KeyError: 0'
+some_dict['a_key'] # ===> prints 'a_value'
+some_dict['a_key_4'] # ===> prints {'a_dict': 'as a value'}
 
 
 #Create a dict copy
-some_dict.copy()
+dict_copy = some_dict.copy()
+dict_copy # ===> prints {'a_key': 'a_value', 'a_key_2': 'a_value_2', 'a_key_3': ['a_list', 'as', 'a value'], 'a_key_4': {'a_dict': 'as a value'}}
 
 #altering a dict
 some_dict['a_key'] = 'new_value'  
-some_dict['a_key']
+some_dict['a_key'] # ===> prints 'new value'
 
 #Length
-len(some_dict)
+len(some_dict) # ===> prints 4
 
 #show all keys and values
-some_dict.keys()
-some_dict.values()
+some_dict.keys() # ===> prints dict_keys(['a_key', 'a_key_2', 'a_key_3', 'a_key_4'])
+some_dict.values() # ===> prints dict_values(['new_value', 'a_value_2', ['a_list', 'as', 'a value'], {'a_dict': 'as a value'}])
 
 
 #Dict comprehension
-{x: x**2 for x in (2, 4, 6)}
+{x: x**2 for x in (2, 4, 6)} # ===> {2: 4, 4: 16, 6: 36}
 
 #built-in function dict()
-x = dict(a=1, b=2, c=3, d=4)# creates a dictionary object
-x
+x = dict(a=1, b=2, c=3, d=4) # creates a dictionary object
+x # ===> prints {'a': 1, 'b': 2, 'c': 3, 'd': 4}

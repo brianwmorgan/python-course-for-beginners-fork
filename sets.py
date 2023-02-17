@@ -36,24 +36,25 @@ update() Update the set with another set, or any other iterable
 
 #The basics
 basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
-print(basket)# show that duplicates have been removed
+print(basket)# show that duplicates have been removed ===> prints {'apple', 'orange', 'pear', 'banana'}
 
-'orange' in basket # fast membership testing
-'crabgrass' in basket
+'orange' in basket # fast membership testing ===> prints 'True'
+'crabgrass' in basket # ===> prints 'False'
 
 # Demonstrate set operations on unique letters from two words
 a = set('abracadabra')
 b = set('alacazam')
-a # unique letters in a
-a - b # letters in a but not in b
-a | b # letters in a or b or both
-a & b # letters in both a and b
-a ^ b # letters in a or b but not both
+a # unique letters in a ===> prints {'a', 'r', 'd', 'c', 'b'}
+a - b # letters in a but not in b ===> prints {'r', 'b', 'd'} 
+a | b # letters in a or b or both ===> prints {'a', 'z', 'r', 'd', 'c', 'm', 'b', 'l'}
+a & b # letters in both a and b ===> prints {'a', 'c'}
+a ^ b # letters in a or b but not both ===> prints {'d', 'b', 'z', 'r', 'm', 'l'}
 
 
 #Set comprehension
 a = {x for x in 'abracadabra' if x not in 'abc'}
+a # ===> prints {'r', 'd'}
 
 #built-in function set()
 x = set(('bobby','bobby', 'at', 'didcoding','dot', 'com')) # creates a set object
-x
+x # ===> prints {'at', 'bobby', 'didcoding', 'dot', 'com'}
